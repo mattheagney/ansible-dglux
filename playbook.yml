@@ -14,3 +14,4 @@
 
   tasks:
     - import_tasks: tasks/common.yml
+    - import_tasks: tasks/okta.yml
