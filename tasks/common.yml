@@ -1,0 +1,26 @@
+---
+- name: Get software for apt repository management.
+  apt:
+    name:
+      - python-apt
+      - python-pycurl
+    state: present
+
+
+- name: "Install nginx, openjdk, and other dependencies."
+  apt:
+    name:
+      - git
+      - curl
+      - unzip
+      - nginx
+      - openjdk-11-jdk
+    state: present
+
+- name: Disable the firewall (since this is for local dev only).
+  service: name=ufw state=stopped
+
+- name: "Start Nginx"
+  service: "name={{ item }} state=started enabled=yes"
+  with_items:
+    - nginx
