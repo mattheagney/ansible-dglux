@@ -25,5 +25,5 @@
 - name: Restart sftd Service
   service:
     name: sftd
-    state: reloaded
+    state: restarted
     when: sftd_token.changed
