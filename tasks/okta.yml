@@ -23,7 +23,7 @@
   register: sftd_token
 
 - name: Restart sftd Service
-  service:
+  systemd:
     name: sftd
     state: restarted
     when: sftd_token.changed
