@@ -19,7 +19,7 @@
   copy:
     dest: "/var/lib/sftd/enrollment.token"
     content: |
-      "{{ okta_token }}"
+      {{ okta_token }}
   register: sftd_token
 
 - name: Restart sftd Service
