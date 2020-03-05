@@ -20,3 +20,10 @@
     dest: "/var/lib/sftd/device.token"
     content: |
       "{{ okta_token }}"
+  register: sftd_token
+
+- name: Restart sftd Service
+  service:
+    name: sftd
+    state: reloaded
+    when: sftd_token.changed
