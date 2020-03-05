@@ -26,4 +26,3 @@
   systemd:
     name: sftd
     state: restarted
-    when: sftd_token.changed
